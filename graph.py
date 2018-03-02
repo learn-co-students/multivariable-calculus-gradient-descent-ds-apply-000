@@ -20,6 +20,11 @@ def m_b_data(m, b, x_values):
     y_values = list(map(lambda x: m*x + b, x_values))
     return {'x': x_values, 'y': y_values}
 
+def m_b_trace(m, b, x_values, mode = 'line', name = 'line function'):
+    values = m_b_data(m, b, x_values)
+    values.update({'mode': mode, 'name': name})
+    return values
+
 def error_line(regression_line, point):
     y_hat = regression_line(point['x'])
     x_value = point['x']
