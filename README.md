@@ -4,7 +4,7 @@
 ### Learning Objectives
 
 * Understand how the process of gradient descent when altering both y-intercept and slope variables
-* Understand what it means to take a partial derivative 
+* Understand what it means to take a partial derivative
 * Understand the rule for taking partial derivatives
 
 ### Introduction
@@ -25,7 +25,7 @@ In two dimensions, when changing just one variable, $m$ or $b$, gradient descent
 
 ![](./tangent-lines.png)
 
-So that was gradient descent in two dimensions.  What is gradient descent in three dimensions? 
+So that was gradient descent in two dimensions.  What is gradient descent in three dimensions?
 
 ### Gradient Descent in 3 dimensions
 
@@ -35,11 +35,11 @@ In three dimensions, we once again choose an initial regression line, which mean
 
 To get a sense of how this works, imagine our initial regression line places us at the back-left corner of the graph above, with a slope of 50, and y-intercept of negative 20.  Now imagine that we cannot see the rest of the graph - yet we still want to approach the minimum.  How do we do this?
 
-Once again, we feel out the slope of the graph with our feet.  Onluy this time, as we shift our feet, we are preparing to walk in two dimensional space.  
+Once again, we feel out the slope of the graph with our feet.  Only this time, as we shift our feet, we are preparing to walk in two dimensional space.  
 
 ![](./traveller-stepping.jpg)
 
-So this is our approach.  We shift horizontally a little bit to determine the change in output in right-left direction, and then shift forward and back to determine the change in output in that direction.  From there we take the next step in the direction of the steepest descent. 
+So this is our approach.  We shift horizontally a little bit to determine the change in output in right-left direction, and then shift forward and back to determine the change in output in that direction.  From there we take the next step in the direction of the steepest descent.
 
 So now, perhaps, you can get a sense of why our technique of gradient descent is so powerful.  Once we consider that in moving towards our best fit lines, we have a choice of moving anywhere in a two-dimensional space, then using the slope to guide us only becomes more important.    
 
@@ -49,15 +49,15 @@ So how does this approach of shifting back and forth translate mathematically?  
 
 To measure the slope in each dimension, one after the other, we'll take the derivative with respect to one variable, and then take the derivative with respect to another variable.  Now let's be very explicit about what it means to take the partial derivative with respect to a variable.
 
-Let's again talk about this procedure in general, and then we'll apply it to the cost curve.  So let's revisit our multivariable function: 
+Let's again talk about this procedure in general, and then we'll apply it to the cost curve.  So let's revisit our multivariable function:
 
 $$f(x, y) = y*x^2 $$
 
-Remember that the function looks like the following: 
+Remember that the function looks like the following:
 
 ![](./parabolayx2.png)
 
-To take a derivative with respect to $x$ means to ask, how does the output change, as we make a nudge only in the $x$ direction. To express that we are nudging in the $x$ direction we say $\frac{\delta f}{\delta x}$.  That symbol is the lower case delta.  We read this as taking the derivative with respect to $x$.  But it just means seeing the change in output as we nudget in the $x$ direction.  
+To take a derivative with respect to $x$ means to ask, how does the output change, as we make a nudge only in the $x$ direction. To express that we are nudging in the $x$ direction we say $\frac{\delta f}{\delta x}$.  That symbol is the lower case delta.  We read this as taking the derivative with respect to $x$.  But it just means seeing the change in output as we nudge in the $x$ direction.  
 
 And to express the change in output with respect to $y$, we say $\frac{\delta f}{\delta y}$.  And this just means calculating the change in output as we nudge our input over in the $y$ direction.
 
@@ -65,19 +65,19 @@ And to express the change in output with respect to $y$, we say $\frac{\delta f}
 
 So what does a derivative $\frac{\delta f}{\delta x}$ look like? How do we think of a partial derivative of a partial derivative of a multivariable function?
 
-Well remember how we think of a standard derivative of a one variable function, for example $f(x) = x^2 $. 
+Well remember how we think of a standard derivative of a one variable function, for example $f(x) = x^2 $.
 
 ![](./tangent-liner.png)
 
 So in two dimensions, to take the derivative at a given point, we simply calculate the slope of the function at that x value.
 
-Now the partial derivative of a multivariable function is fairly similar.  But here it's equal to the slope of the tangent line at a specific $x$ value **and** a specific $y$ value.  Let's break this down by using our patented "freeze-frame" method.  The graphs below shows lines tangent to the curve in the $x$ direction.  (The tangent lines are a little small, but they and their corresponding slopes are there). 
+Now the partial derivative of a multivariable function is fairly similar.  But here it's equal to the slope of the tangent line at a specific $x$ value **and** a specific $y$ value.  Let's break this down by using our patented "freeze-frame" method.  The graphs below shows lines tangent to the curve in the $x$ direction.  (The tangent lines are a little small, but they and their corresponding slopes are there).
 
 #### Graphs for $\frac{df}{dx}$
 
 ![](./partial-derivatives-3d.png)
 
-Let's take a close look.  The top left graph shows $\frac{\delta f}{\delta x}$ at different points of $f(x, y)$ where $y = -1$.  So as you can see, $\frac{\delta f}{\delta x}f(1, 3) = -6$ as shown in the green line in the top left.  That's because when you move to that point on the graph, $(3, -1)$ and then nudge a little bit in the $x$ direction, the change in output is $-6$.  And that is represented by the line tangent to the function at that point in the $x$ direction.  You can go through the other points in these graphs, and work through the same logic. 
+Let's take a close look.  The top left graph shows $\frac{\delta f}{\delta x}$ at different points of $f(x, y)$ where $y = -1$.  So as you can see, $\frac{\delta f}{\delta x}f(1, 3) = -6$ as shown in the green line in the top left.  That's because when you move to that point on the graph, $(3, -1)$ and then nudge a little bit in the $x$ direction, the change in output is $-6$.  And that is represented by the line tangent to the function at that point in the $x$ direction.  You can go through the other points in these graphs, and work through the same logic.
 
 So with taking the partial derivative $\frac{\delta f}{\delta x}$, you may think about moving to the slice of the graph for a given value of $y$, then moving to the proper value of $x$, and then finding the tangent line at that point.  
 
@@ -85,7 +85,7 @@ As you can see, $\frac{\delta f}{dx}$ means the change in output from a nudge in
 
 ### One more example
 
-This can be a little mind-bending so let's go through this again for $\frac{df}{dy}f(x, y)$ where $f(x,y) = (yx^2) $.  Once again, the 3-d graph of $f(x,y) = yx^2$ is the following: 
+This can be a little mind-bending so let's go through this again for $\frac{df}{dy}f(x, y)$ where $f(x,y) = (yx^2) $.  Once again, the 3-d graph of $f(x,y) = yx^2$ is the following:
 
 ![](./parabolayx2.png)
 
